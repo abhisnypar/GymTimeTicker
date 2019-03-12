@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.saiabhinaypidugu.gymtimeticker.viewmodel.TimeTrackerViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/no_of_exercises_result" />
+
+        <EditText
+            android:id="@+id/no_of_exercises_result"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_workouts_total"
+            android:inputType="number"
+            android:autofillHints="@string/hint"
+            android:onTextChanged="@{(newValue, start, before, count) -> viewModel.setTotalWorkouts(newValue)}"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/each_workout_time"
+            style="@style/ButtonCustomStyle"
+            android:layout_marginTop="20dp"
+            android:onClick="@{viewModel.onTimerClicked()}"
+            android:text="@string/each_workout_time"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/no_of_exercises_result" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@{viewModel.eachWorkOutTimeTextObservableField}"
+            app:layout_constraintLeft_toRightOf="@+id/each_workout_time"
+            app:layout_constraintTop_toBottomOf="@+id/no_of_exercises_result" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/interval_time"
+            style="@style/ButtonCustomStyle"
+            android:layout_marginTop="20dp"
+            android:onClick="@{viewModel.onTimerClicked()}"
+            android:text="@string/interval_time"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/each_workout_time" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@{viewModel.intervalTimeTextObservableField}"
+            app:layout_constraintLeft_toRightOf="@+id/interval_time"
+            app:layout_constraintTop_toBottomOf="@+id/each_workout_time" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/start_workouts"
+            style="@style/ButtonCustomStyle"
+            android:layout_marginTop="20dp"
+            android:onClick="@{viewModel.startWorkouts()}"
+            android:text="@string/start_workout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/interval_time" />
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/start_workouts">
+
+            <include
+                android:id="@+id/tracker_display"
+                layout="@layout/activity_clock_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:viewModel="@{viewModel}" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floating_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_icon="@drawable/ic_play_arrow_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

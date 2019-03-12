@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">GymTimeTicker</string>
+    <string name="interval_time">Interval Time</string>
+    <string name="end_time">End Time</string>
+    <string name="duration">Duration</string>
+    <string name="information">Note: \nHence this is a tracker of time during the workout, the \nEND-TIME is to select
+    the end time from now. \nInterval is to select the interval between each workout. \nDuration is the time interval for each workout duration. </string>
+    <string name="divider">:</string>
+    <string name="no_of_exercises">WorkOuts Total</string>
+    <string name="each_workout_time">Each Round Time</string>
+    <string name="start_workout">StartWorkout</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_workouts_total">Workout Total</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notification_title">Time To Train</string>
+    <string name="notification_body">Get Back to the Screen. You are almost done.</string>
+    <string name="hint">hint</string>
+</resources>
