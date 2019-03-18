@@ -12,9 +12,6 @@ abstract class ActivityBuilder {
     abstract fun bindMainActivity(): MainActivity
 
     @ContributesAndroidInjector
-    abstract fun buildStartUpActivity(): StartUpActivity
-
-    @ContributesAndroidInjector
     abstract fun buildFragment(): CustomTimePickerDialogFragment
 
 }

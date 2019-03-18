@@ -1,8 +1,9 @@
-package com.example.saiabhinaypidugu.gymtimeticker
+package com.example.saiabhinaypidugu.gymtimeticker.modules
 
 import android.arch.persistence.room.Room
 import android.content.Context
 import android.util.AttributeSet
+import com.example.saiabhinaypidugu.gymtimeticker.GymTickerApplication
 import com.example.saiabhinaypidugu.gymtimeticker.roomdb.TimeDatabase
 import com.example.saiabhinaypidugu.gymtimeticker.roomdb.TimeEntryProvider
 import com.example.saiabhinaypidugu.gymtimeticker.timeSpinner.CustomTimeSpinner
@@ -16,7 +17,6 @@ import javax.inject.Singleton
 class AppModule {
 
     @Provides
-    @Singleton
     fun providesApplication(application: GymTickerApplication): Context {
         return application
     }

@@ -1,13 +1,11 @@
 package com.example.saiabhinaypidugu.gymtimeticker
 
-import android.arch.lifecycle.LifecycleObserver
 import android.arch.lifecycle.Observer
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.saiabhinaypidugu.gymtimeticker.databinding.MainActivityBinding
-import com.example.saiabhinaypidugu.gymtimeticker.notification.NotificationBuilder
 import com.example.saiabhinaypidugu.gymtimeticker.timerDialog.CustomTimePickerDialogFragment
 import com.example.saiabhinaypidugu.gymtimeticker.utils.EventStatus
 import com.example.saiabhinaypidugu.gymtimeticker.view.ClockViewActivity
