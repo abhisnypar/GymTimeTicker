@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.saiabhinaypidugu.gymtimeticker.viewmodel.StartUpFragmentViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/data_screen_header_text"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/data_screen_header"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            tools:text="Please fill the data required" />
+
+        <Button
+            android:id="@+id/data_screen_header_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            tools:text="click here" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent">
+
+            <RadioButton
+                android:id="@+id/data_screen_radio1"
+                android:layout_width="wrap_content"
+                android:checked="@{model.radioOneObservableField}"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/data_screen_radio2"
+                android:layout_width="wrap_content"
+                android:checked="@{model.radioTwoObservableField}"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/data_screen_radio3"
+                android:layout_width="wrap_content"
+                android:checked="@{model.radioThreeObservableField}"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
