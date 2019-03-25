@@ -1,6 +1,6 @@
 package com.example.saiabhinaypidugu.gymtimeticker.components
 
-import com.example.saiabhinaypidugu.gymtimeticker.ActivityBuilder
+import com.example.saiabhinaypidugu.gymtimeticker.daggerBuilders.ActivityBuilder
 import com.example.saiabhinaypidugu.gymtimeticker.GymTickerApplication
 import com.example.saiabhinaypidugu.gymtimeticker.modules.AppModule
 import dagger.BindsInstance

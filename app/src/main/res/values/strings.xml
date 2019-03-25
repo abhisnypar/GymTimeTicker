@@ -18,4 +18,5 @@
     <string name="notification_title">Time To Train</string>
     <string name="notification_body">Get Back to the Screen. You are almost done.</string>
     <string name="hint">hint</string>
+    <string name="data_screen_header">Set Workout</string>
 </resources>

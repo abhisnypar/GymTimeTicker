@@ -1,7 +1,7 @@
-package com.example.saiabhinaypidugu.gymtimeticker
+package com.example.saiabhinaypidugu.gymtimeticker.daggerBuilders
 
+import com.example.saiabhinaypidugu.gymtimeticker.MainActivity
 import com.example.saiabhinaypidugu.gymtimeticker.timerDialog.CustomTimePickerDialogFragment
-import com.example.saiabhinaypidugu.gymtimeticker.view.StartUpActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

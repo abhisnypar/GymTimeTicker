@@ -14,13 +14,13 @@ import com.example.saiabhinaypidugu.gymtimeticker.modules.StartUpModule
 import com.example.saiabhinaypidugu.gymtimeticker.viewmodel.StartUpFragmentViewModel
 import javax.inject.Inject
 
-class StartUpScreenFragment : Fragment() {
+class StartUpScreenFragmentTwo : Fragment() {
     @Inject
     lateinit var screenViewModel: StartUpFragmentViewModel
-    private val SCREEN_POSITION = "screen_position_one"
+    private val SCREEN_POSITION = "screen_position_two"
 
     override fun onAttach(context: Context?) {
-        DaggerFragmentComponent.builder().startUpModule(StartUpModule(activity!!)).build().injectFragment(this)
+        DaggerFragmentComponent.builder().startUpModule(StartUpModule(activity!!)).build().injectFragmentTwo(this)
         super.onAttach(context)
     }
 
@@ -32,7 +32,7 @@ class StartUpScreenFragment : Fragment() {
         return binding.root
     }
 
-    fun newInstance(position: Int, startUpScreenFragment: StartUpScreenFragment): StartUpScreenFragment {
+    fun newInstance(position: Int, startUpScreenFragment: StartUpScreenFragmentTwo): StartUpScreenFragmentTwo {
         val bundle = Bundle()
         bundle.putInt(SCREEN_POSITION, position)
         startUpScreenFragment.arguments = bundle
