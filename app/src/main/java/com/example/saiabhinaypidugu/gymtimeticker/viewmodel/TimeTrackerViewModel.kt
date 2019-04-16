@@ -38,7 +38,11 @@ class TimeTrackerViewModel(var context: GymTickerApplication) : ViewModel() {
 
     fun setTotalWorkouts(newValue: CharSequence) {
         if (newValue.toString() != "" && !newValue.toString().isEmpty())
-            totalWorkouts = newValue.toString().toInt()
+            try {
+                totalWorkouts = newValue.toString().toInt()
+            } catch (e: NumberFormatException) {
+                print(e.stackTrace)
+            }
     }
 
     fun onTimerClicked(): View.OnClickListener {

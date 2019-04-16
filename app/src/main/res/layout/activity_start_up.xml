@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
+            name="baseModel"
+            type="com.example.saiabhinaypidugu.gymtimeticker.viewmodel.StartUpFragmentViewModel"/>
+
+        <variable
             name="viewModel"
             type="com.example.saiabhinaypidugu.gymtimeticker.viewmodel.StartUpViewModel" />
+
     </data>
 
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -15,7 +20,38 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/start_up_pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:adapter="@{viewModel.screenSlideAdapterObservableField}"
+            app:layout_constraintBottom_toTopOf="@+id/page_indicator" />
+
+        <RadioGroup
+            android:id="@+id/page_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent">
+
+            <RadioButton
+                android:id="@+id/data_screen_radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{baseModel.radioOneObservableField}"/>
+
+            <RadioButton
+                android:id="@+id/data_screen_radio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{baseModel.radioTwoObservableField}" />
+
+            <RadioButton
+                android:id="@+id/data_screen_radio3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{baseModel.radioThreeObservableField}" />
+        </RadioGroup>
 
     </android.support.constraint.ConstraintLayout>
 

@@ -9,7 +9,8 @@ class TimeEntryProvider(private var timeDatabase: TimeDatabase) {
 
     fun insertValuesToDd(timeType: String, hours: Int, minutes: Int, seconds: Int) {
         Observable.create<Void> {
-            timeDatabase.timeDao().insertData(TimeEntity(timeType, hours, minutes, seconds)) }
+            timeDatabase.timeDao().insertData(TimeEntity(timeType, hours, minutes, seconds))
+        }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError(Throwable::printStackTrace)

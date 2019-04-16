@@ -38,17 +38,17 @@ class CustomTimePickerDialogFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        customSpinnerViewModel.getHoursLiveData().observeForever {
+        customSpinnerViewModel.getHoursLiveData().observeForever { it ->
             it?.let {
                 handleHours(it)
             }
         }
-        customSpinnerViewModel.getMinutesLiveData().observeForever {
+        customSpinnerViewModel.getMinutesLiveData().observeForever {it ->
             it?.let {
                 handleMinutes(it)
             }
         }
-        customSpinnerViewModel.getSecondsLiveData().observeForever {
+        customSpinnerViewModel.getSecondsLiveData().observeForever { it ->
             it?.let {
                 handSeconds(it)
             }
@@ -96,9 +96,7 @@ class CustomTimePickerDialogFragment : DialogFragment() {
 
     override fun onResume() {
         super.onResume()
-        dialog?.let {
-            it.setCancelable(false)
-        }
+        dialog?.setCancelable(false)
     }
 
     private fun insertValuesToDb(timeType: String?) {

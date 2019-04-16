@@ -1,5 +1,8 @@
-package com.example.saiabhinaypidugu.gymtimeticker
+package com.example.saiabhinaypidugu.gymtimeticker.components
 
+import com.example.saiabhinaypidugu.gymtimeticker.daggerBuilders.ActivityBuilder
+import com.example.saiabhinaypidugu.gymtimeticker.GymTickerApplication
+import com.example.saiabhinaypidugu.gymtimeticker.modules.AppModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

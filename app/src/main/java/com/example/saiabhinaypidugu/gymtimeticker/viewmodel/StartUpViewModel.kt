@@ -1,7 +1,12 @@
 package com.example.saiabhinaypidugu.gymtimeticker.viewmodel
 
-import android.arch.lifecycle.ViewModel
+import android.databinding.ObservableField
+import com.example.saiabhinaypidugu.gymtimeticker.slidesPack.ScreenSlidePagerAdapter
 
-class StartUpViewModel : ViewModel() {
+open class StartUpViewModel(screenSlidePagerAdapter: ScreenSlidePagerAdapter) : BaseModel() {
+    var screenSlideAdapterObservableField: ObservableField<ScreenSlidePagerAdapter> = ObservableField()
 
+    init {
+        screenSlideAdapterObservableField.set(screenSlidePagerAdapter)
+    }
 }
